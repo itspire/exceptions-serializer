@@ -1,3 +1,3 @@
-# serializer-exceptions
+# Itspire Exceptions - Serializer 
 
-Itspire Serializer Exceptions Classes
+This library follows the PSR-12 convention.

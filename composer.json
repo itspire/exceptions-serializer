@@ -1,0 +1,43 @@
+{
+    "name": "itspire/exceptions-serializer",
+    "type": "library",
+    "description": "Itspire Exceptions - Serializer",
+    "keywords": ["itspire", "serializer", "exceptions"],
+    "homepage": "http://www.itspire.fr",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Ryan RAJKOMAR",
+            "email": "ryan.rajkomar@itspire.fr"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "doctrine/collections": "~1.6",
+        "itspire/exceptions": "dev-development",
+        "jms/serializer": "~3.10",
+        "psr/http-message": "~1.0",
+        "symfony/translation": "~4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Itspire\\Exception\\Serializer\\": "src/main/php/"
+        }
+    },
+    "require-dev": {
+        "ext-simplexml": "*",
+        "pdepend/pdepend": "~2.8",
+        "phploc/phploc": "~7.0",
+        "roave/security-advisories": "dev-latest",
+        "sebastian/phpcpd": "~6.0",
+        "squizlabs/php_codesniffer": "~3.5",
+        "symfony/phpunit-bridge": "~5.1"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Itspire\\Exception\\Serializer\\Test\\": "src/test/php/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
