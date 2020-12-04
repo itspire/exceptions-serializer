@@ -5,9 +5,8 @@
   ~ All Right Reserved.
   -->
 
-<api_ws_exception code="TEST" message="test">
+<webservice_exception code="TEST" message="test">
     <details>
         <detail>Detail1</detail>
-        <detail>Detail2</detail>
     </details>
-</api_ws_exception>
+</webservice_exception>

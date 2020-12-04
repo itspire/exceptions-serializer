@@ -12,7 +12,8 @@ namespace Itspire\Exception\Serializer\Model\Api;
 
 use JMS\Serializer\Annotation as Serializer;
 
-abstract class AbstractApiException implements ApiExceptionInterface
+/** @Serializer\XmlRoot("exception") */
+class ApiException implements ApiExceptionInterface
 {
     /**
      * Code is set to string because it can contains user-defined string based codes (i.e : ws exception codes)

@@ -10,7 +10,8 @@ declare(strict_types=1);
 
 namespace Itspire\Exception\Serializer\Test\Functional;
 
-use Itspire\Exception\Serializer\Test\Fixtures\Model\Api\ApiException;
+use Itspire\Exception\Serializer\Model\Api\ApiExceptionInterface;
+use Itspire\Exception\Serializer\Model\Api\ApiException;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;
@@ -18,7 +19,7 @@ use PHPUnit\Framework\TestCase;
 class ApiExceptionTest extends TestCase
 {
     private static ?SerializerInterface $serializer = null;
-    private ?ApiException $apiException = null;
+    private ?ApiExceptionInterface $apiException = null;
 
     public static function setUpBeforeClass(): void
     {
@@ -54,7 +55,7 @@ class ApiExceptionTest extends TestCase
     public function serializeExceptionTest(): void
     {
         static::assertXmlStringEqualsXmlFile(
-            realpath('src/test/resources/test_api_exception.xml'),
+            realpath('src/test/resources/test_exception.xml'),
             static::$serializer->serialize($this->apiException, 'xml')
         );
     }
@@ -64,7 +65,7 @@ class ApiExceptionTest extends TestCase
     {
         /** @var \SimpleXMLElement $apiExceptionXml */
         $apiExceptionXml = simplexml_load_string(
-            file_get_contents(realpath('src/test/resources/test_api_exception.xml'))
+            file_get_contents(realpath('src/test/resources/test_exception.xml'))
         );
 
         /** @var ApiException $deserializedResult */

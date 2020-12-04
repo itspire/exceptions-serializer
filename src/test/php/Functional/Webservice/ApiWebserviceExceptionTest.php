@@ -11,7 +11,7 @@ declare(strict_types=1);
 namespace Itspire\Exception\Serializer\Test\Functional;
 
 use Itspire\Exception\Serializer\Model\Api\Webservice\ApiWebserviceExceptionInterface;
-use Itspire\Exception\Serializer\Test\Fixtures\Model\Api\Webservice\ApiWebserviceException;
+use Itspire\Exception\Serializer\Model\Api\Webservice\ApiWebserviceException;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;
@@ -59,7 +59,7 @@ class ApiWebserviceExceptionTest extends TestCase
     public function serializeExceptionTest(): void
     {
         static::assertXmlStringEqualsXmlFile(
-            realpath('src/test/resources/test_api_ws_exception.xml'),
+            realpath('src/test/resources/test_webservice_exception.xml'),
             static::$serializer->serialize($this->apiWebserviceException, 'xml')
         );
     }
@@ -70,7 +70,7 @@ class ApiWebserviceExceptionTest extends TestCase
         $this->apiWebserviceException->removeDetail('Detail2');
 
         static::assertXmlStringEqualsXmlFile(
-            realpath('src/test/resources/test_api_ws_exception_single_detail.xml'),
+            realpath('src/test/resources/test_webservice_exception_single_detail.xml'),
             static::$serializer->serialize($this->apiWebserviceException, 'xml')
         );
     }
@@ -80,7 +80,7 @@ class ApiWebserviceExceptionTest extends TestCase
     {
         /** @var \SimpleXMLElement $apiWebserviceExceptionXml */
         $apiWebserviceExceptionXml = simplexml_load_string(
-            file_get_contents(realpath('src/test/resources/test_api_ws_exception.xml'))
+            file_get_contents(realpath('src/test/resources/test_webservice_exception.xml'))
         );
 
         /** @var ApiWebserviceException $deserializedResult */

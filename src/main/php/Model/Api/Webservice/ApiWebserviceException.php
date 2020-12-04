@@ -10,10 +10,11 @@ declare(strict_types=1);
 
 namespace Itspire\Exception\Serializer\Model\Api\Webservice;
 
-use Itspire\Exception\Serializer\Model\Api\AbstractApiException;
+use Itspire\Exception\Serializer\Model\Api\ApiException;
 use JMS\Serializer\Annotation as Serializer;
 
-abstract class AbstractApiWebserviceException extends AbstractApiException implements ApiWebserviceExceptionInterface
+/** @Serializer\XmlRoot("webservice_exception") */
+class ApiWebserviceException extends ApiException implements ApiWebserviceExceptionInterface
 {
     /**
      * @Serializer\XmlList(inline = false, entry = "detail")
